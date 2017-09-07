@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Freebie: 4 Bootstrap Gallery Templates</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="gallery-grid.css">
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
+<style>
+    .container.gallery-container{
+        background-image: url("../images/shopping.jpg");
+    }
+</style>
+</head>
+<body>
+
+<div class="container gallery-container">
+
+    <h1>UMKC Online Shopping</h1>
+
+    <p class="page-description text-center">Best place to shop</p>
+    
+    <div class="tz-gallery" style="padding-bottom: 10%">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="https://www.amazon.com/prepaid-no-contract-cell-phones/b?ie=UTF8&node=2407748011">
+                    <img style="height: 350px" id="one" src="../images/mob-1.jpg" alt="Park">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="https://www.amazon.com/prepaid-no-contract-cell-phones/b?ie=UTF8&node=2407748011">
+                    <img style="height: 350px" id="two" src="../images/mob-2.jpg" alt="Bridge">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="https://www.amazon.com/prepaid-no-contract-cell-phones/b?ie=UTF8&node=2407748011">
+                    <img style="height: 350px" id="three" src="../images/mob-3.jpg" alt="Tunnel">
+                </a>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="sel">
+    <select id="CarList" style="margin-left: 20%;
+width: 57%;
+color: lightseagreen;
+font-size: x-large;
+"  >
+        <option value="1">Mobiles</option>
+        <option value="2">T-shirts</option>
+        <option value="3">Watches</option>
+        <option value="4">shoes</option>
+    </select>
+    </div>
+
+    <form id="myForm" style="margin-left: 40%;">
+        <div class="checkbox" style="font-size: x-large;
+color: white;">
+            <label><input id="check1" type="radio" name="rad" value="Daily"> Daily</label>
+        </div>
+        <div class="checkbox" style="font-size: x-large;
+color: white;">
+            <label><input id="check2" type="radio" name="rad" value="Weekly"> Weekly</label>
+        </div>
+        <div class="checkbox " style="font-size: x-large;
+color: white;">
+            <label><input id="check3" type="radio" name="rad" value="Monthly" > Monthly</label>
+        </div>
+    </form>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+
+
+
+
+
+
+var pictureList = [
+    "../images/tshirt-1.jpg",
+    "../images/tshirt-2.jpg",
+    "../images/tshirt-3.jpg",
+    "../images/tshirt-4.jpg",
+    "../images/tshirt-5.jpg",
+    "../images/tshirt-6.jpg"
+     ];
+var watchList = [
+    "../images/watch-1.jpg",
+    "../images/watch-2.jpg",
+    "../images/watch-3.jpg",
+    "../images/watch-4.jpg",
+    "../images/watch-5.jpg",
+    "../images/watch-6.jpg"
+];
+var mobList = [
+    "../images/mob-1.jpg",
+    "../images/mob-2.jpg",
+    "../images/mob-3.jpg",
+    "../images/mob-4.jpg",
+    "../images/mob-5.jpg",
+    "../images/mob-6.jpg"
+];
+var shoeList = [
+    "../images/shoe-1.jpg",
+    "../images/shoe-2.jpg",
+    "../images/shoe-3.jpg",
+    "../images/shoe-4.jpg",
+    "../images/shoe-5.jpg",
+    "../images/shoe-6.jpg"
+];
+$('#CarList').change(function () {
+
+    if ($("#CarList option:selected").text() == "T-shirts") {
+        $('#one').attr("src", pictureList[0]);
+        $('#two').attr("src", pictureList[1]);
+        $('#three').attr("src", pictureList[2]);
+        $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_i_4_2?url=search-alias%3Dfashion-mens&field-keywords=tshirt+men&sprefix=ts%2Cfashion-mens%2C154&crid=5H4E0W7M7MYX');
+    }
+    if ($("#CarList option:selected").text() == "Watches") {
+        $('#one').attr("src", watchList[0]);
+        $('#two').attr("src", watchList[1]);
+        $('#three').attr("src", watchList[2]);
+        $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_c_1_8?url=search-alias%3Dfashion-mens&field-keywords=watch+for+men&sprefix=watch+fo%2Cfashion-mens%2C156&crid=3HZ7L3TLJVZ1G&rh=n%3A7147441011%2Ck%3Awatch+for+men&ajr=0');
+    }
+    if ($("#CarList option:selected").text() == "shoes") {
+        $('#one').attr("src", shoeList[0]);
+        $('#two').attr("src", shoeList[1]);
+        $('#three').attr("src", shoeList[2]);
+        $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_c_1_8?url=search-alias%3Dfashion-mens-watches&field-keywords=shoes+for+men&sprefix=shoes+fo%2Cfashion-mens-watches%2C156&crid=1UEFHM784R54R');
+    }
+    if ($("#CarList option:selected").text() == "Mobiles") {
+        $('#one').attr("src", mobList[0]);
+        $('#two').attr("src", mobList[1]);
+        $('#three').attr("src", mobList[2]);
+        $('.lightbox').attr('href','https://www.amazon.com/prepaid-no-contract-cell-phones/b?ie=UTF8&node=2407748011');
+    }
+
+});
+
+$("input[name=rad]:radio").change(function () {
+
+    if ($("#check1").is(':checked')) {
+        if ($("#CarList option:selected").text() == "Watches") {
+            $('#one').attr("src", watchList[3]);
+            $('#two').attr("src", watchList[2]);
+            $('#three').attr("src", watchList[1]);
+            $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_i_4_2?url=search-alias%3Dfashion-mens&field-keywords=tshirt+men&sprefix=ts%2Cfashion-mens%2C154&crid=5H4E0W7M7MYX');
+        }
+        if ($("#CarList option:selected").text() == "T-shirts") {
+            $('#one').attr("src", pictureList[3]);
+            $('#two').attr("src", pictureList[2]);
+            $('#three').attr("src", pictureList[1]);
+            $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_i_4_2?url=search-alias%3Dfashion-mens&field-keywords=tshirt+men&sprefix=ts%2Cfashion-mens%2C154&crid=5H4E0W7M7MYX');
+        }
+        if ($("#CarList option:selected").text() == "shoes") {
+            $('#one').attr("src", shoeList[3]);
+            $('#two').attr("src", shoeList[2]);
+            $('#three').attr("src", shoeList[1]);
+            $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_c_1_8?url=search-alias%3Dfashion-mens-watches&field-keywords=shoes+for+men&sprefix=shoes+fo%2Cfashion-mens-watches%2C156&crid=1UEFHM784R54R');
+        }
+        if ($("#CarList option:selected").text() == "Mobiles") {
+            $('#one').attr("src", mobList[3]);
+            $('#two').attr("src", mobList[2]);
+            $('#three').attr("src", mobList[1]);
+            $('.lightbox').attr('href','https://www.amazon.com/prepaid-no-contract-cell-phones/b?ie=UTF8&node=2407748011');
+        }
+    }
+
+
+
+    if ($("#check3").is(':checked')) {
+    if ($( "#CarList option:selected" ).text()== "Watches" ){
+        $('#one').attr("src",watchList[1]);
+        $('#two').attr("src",watchList[2]);
+        $('#three').attr("src",watchList[4]);
+        $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_i_4_2?url=search-alias%3Dfashion-mens&field-keywords=tshirt+men&sprefix=ts%2Cfashion-mens%2C154&crid=5H4E0W7M7MYX');}
+        if ($( "#CarList option:selected" ).text()== "T-shirts" ){
+            $('#one').attr("src",pictureList[1]);
+            $('#two').attr("src",pictureList[2]);
+            $('#three').attr("src",pictureList[4]);
+            $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_i_4_2?url=search-alias%3Dfashion-mens&field-keywords=tshirt+men&sprefix=ts%2Cfashion-mens%2C154&crid=5H4E0W7M7MYX');
+    }
+        if ($( "#CarList option:selected" ).text()== "shoes" ){
+            $('#one').attr("src",shoeList[1]);
+            $('#two').attr("src",shoeList[2]);
+            $('#three').attr("src",shoeList[4]);
+            $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_c_1_8?url=search-alias%3Dfashion-mens-watches&field-keywords=shoes+for+men&sprefix=shoes+fo%2Cfashion-mens-watches%2C156&crid=1UEFHM784R54R');
+        }
+        if ($( "#CarList option:selected" ).text()== "Mobiles" ){
+            $('#one').attr("src",mobList[1]);
+            $('#two').attr("src",mobList[2]);
+            $('#three').attr("src",mobList[4]);
+            $('.lightbox').attr('href','https://www.amazon.com/prepaid-no-contract-cell-phones/b?ie=UTF8&node=2407748011');}
+    }
+
+
+   if ($("#check2").is(':checked')) {
+ if ($( "#CarList option:selected" ).text()== "Watches" ){
+        $('#one').attr("src",watchList[2]);
+        $('#two').attr("src",watchList[4]);
+        $('#three').attr("src",watchList[3]);
+     $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_i_4_2?url=search-alias%3Dfashion-mens&field-keywords=tshirt+men&sprefix=ts%2Cfashion-mens%2C154&crid=5H4E0W7M7MYX');
+ }
+       if ($( "#CarList option:selected" ).text()== "T-shirts" ){
+           $('#one').attr("src",pictureList[2]);
+           $('#two').attr("src",pictureList[4]);
+           $('#three').attr("src",pictureList[3]);
+           $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_i_4_2?url=search-alias%3Dfashion-mens&field-keywords=tshirt+men&sprefix=ts%2Cfashion-mens%2C154&crid=5H4E0W7M7MYX');
+       }
+       if ($( "#CarList option:selected" ).text()== "shoes" ){
+           $('#one').attr("src",shoeList[2]);
+           $('#two').attr("src",shoeList[4]);
+           $('#three').attr("src",shoeList[3]);
+           $('.lightbox').attr('href','https://www.amazon.com/s/ref=nb_sb_ss_c_1_8?url=search-alias%3Dfashion-mens-watches&field-keywords=shoes+for+men&sprefix=shoes+fo%2Cfashion-mens-watches%2C156&crid=1UEFHM784R54R');
+       }
+       if ($( "#CarList option:selected" ).text()== "Mobiles" ){
+           $('#one').attr("src",mobList[2]);
+           $('#two').attr("src",mobList[4]);
+           $('#three').attr("src",mobList[3]);
+           $('.lightbox').attr('href','https://www.amazon.com/prepaid-no-contract-cell-phones/b?ie=UTF8&node=2407748011');
+       }
+}
+
+});
+</script>
+
+</body>
+</html>
